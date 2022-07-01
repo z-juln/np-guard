@@ -1,6 +1,6 @@
 {
   "name": "np-guard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "npm publish命令拦截器",
   "main": "index.js",
   "bin": {
