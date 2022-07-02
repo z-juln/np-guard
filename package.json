@@ -7,7 +7,8 @@
     "npg": "bin/npg"
   },
   "scripts": {
-    "prepublishOnly": "npg -o 'np --no-yarn --yolo --any-branch'"
+    "prepublishOnly": "npg -o 'npm run release'",
+    "release": "np --no-yarn --yolo --any-branch"
   },
   "files": [
     "bin/npg",
