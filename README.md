@@ -1,5 +1,9 @@
 # np-guard
-npm publish命令拦截器
+
+npm publish命令拦截器, 提供两种拦截方式:
+
+1. 提示引导: 在 `npm publish` 时只做拦截, 并提示用户应该使用其它的命令去发布该包
+2. 重写覆盖: 重写命令覆盖原本的 `npm publish` 行为
 
 ## 安装
 
@@ -38,6 +42,7 @@ options:
 - `color` (alias `c`): 输出的文字颜色, 默认为`white`, 可选值可以通过`help`参数查看
 - `bg` (alias `b`): 输出的文字背景色, 默认为`red`, 可选值可以通过`help`参数查看
 - `skip-npg` (alias `S`): 跳过`npg拦截`, 用于真实的 `npm publish` 运行阶段
+- `overwrite` (alias `o`): 重写覆盖原本的 `npm publish` 行为, 如 `npg -o 'npm run release'`
 
 `color` 和 `bg` 的可选值:
 
@@ -65,18 +70,15 @@ env:
 
 这里必须设置环境变量 `SKIP_NPG=1`, 因为 `np` 底层调用的还是 `npm publish`, 会导致与 `prepublishOnly` 钩子循环调用造成卡死
 
-<!--
-下面这种的目的是覆盖默认的 `npm publish` 行为 (尚不能正常工作, 至今未想到合适的解决方案, `不推荐使用!!!`)
+下面这种的目的是重写覆盖默认的 `npm publish` 行为
 
 ```json
 {
   "script": {
-    "prepublishOnly": "npm run release && npg -s",
-    "release": "np --no-yarn --no-tests --no-cleanup --branch release"
+    "prepublishOnly": "npg -o 'np --no-yarn --no-tests --no-cleanup --branch release'"
   }
 }
 ```
--->
 
 ### 报错 `exit 1`
 

@@ -12,6 +12,7 @@ const getOpts = (argv) => {
       color: { type: 'string', alias: 'c' },
       bg: { type: 'string', alias: 'b' },
       'skip-npg': { type: 'boolean', alias: 'S' },
+      'overwrite': { type: 'string', alias: 'o' },
     },
     argv
   );

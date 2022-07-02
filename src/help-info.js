@@ -46,6 +46,7 @@ const logHelp = () => {
   - \`color\` (alias: \`c\`): 输出的文字颜色, 默认为\`white\`
   - \`bg\` (alias: \`b\`): 输出的文字背景色, 默认为\`red\`
   - \`skip-npg\` (alias \`S\`): 跳过npg拦截, 用于真实的 npm publish 运行阶段
+  - \`overwrite\` (alias \`o\`): 重写覆盖原本的 \`npm publish\` 行为, 如 \`npg -o 'npm run release'\`
   `);
   log(
   `  \`color 可选值有\`: ${colors.join(', ')}`
