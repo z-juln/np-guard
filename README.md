@@ -75,7 +75,8 @@ options:
 ```json
 {
   "script": {
-    "prepublishOnly": "npg -o 'np --no-yarn --no-tests --no-cleanup --branch release'"
+    "prepublishOnly": "npg -o 'npm run release'",
+    "release": "np --no-yarn --yolo --any-branch"
   }
 }
 ```
