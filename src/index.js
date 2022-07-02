@@ -3,7 +3,7 @@ const { version } = require('../package.json');
 const getOpts = require('./get-opts');
 const logHelp = require('./help-info');
 const report = require('./report');
-const { promiseSpawn } = require('./utils');
+const spanwOverwrite = require('./spawn-overwrite');
 
 async function main(argv) {
   const opts = getOpts(argv);
@@ -14,7 +14,7 @@ async function main(argv) {
     process.exit();
   } else if (opts['overwrite']) {
     try {
-      await promiseSpawn(opts['overwrite']);
+      await spanwOverwrite(opts['overwrite']);
     } catch (error) {
       console.log({error});
     }
