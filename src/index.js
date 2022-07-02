@@ -1,4 +1,3 @@
-const debug = require('debug')('npg');
 const { version } = require('../package.json');
 const getOpts = require('./get-opts');
 const logHelp = require('./help-info');
@@ -7,7 +6,6 @@ const spanwOverwrite = require('./spawn-overwrite');
 
 async function main(argv) {
   const opts = getOpts(argv);
-  debug({opts});
 
   // singe opt. conflicted order: skip-npg > overwrite > version > help
   if (opts['skip-npg']) {
