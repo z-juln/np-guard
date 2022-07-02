@@ -53,7 +53,10 @@ const logHelp = () => {
   log(
   `  \`bg 可选值有\`: ${bgs.join(', ')}`
   );
-  log('');
+  log(`
+  \`env\`:
+  - \`SKIP_NPG=1\`: 与 \`skip-npg\` 作用相同
+  `);
   log(
   `  更新信息请看文档 \`https://www.npmjs.com/package/np-guard\` `
   );

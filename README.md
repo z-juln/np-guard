@@ -44,6 +44,10 @@ options:
 - `color`` 可选值有: black, red, green, yellow, blue, magenta, cyan, white, gray, grey
 - `bg`` 可选值有: black, red, green, yellow, blue, magenta, cyan, white
 
+env:
+
+- `SKIP_NPG=1` 与 `skip-npg` 作用相同
+
 ## 温馨提示
 
 ### 最佳搭档 —— [`np`](https://www.npmjs.com/package/np)
