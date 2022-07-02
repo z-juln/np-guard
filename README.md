@@ -49,7 +49,7 @@ options:
 - `color`` 可选值有: black, red, green, yellow, blue, magenta, cyan, white, gray, grey
 - `bg`` 可选值有: black, red, green, yellow, blue, magenta, cyan, white
 
-env:
+环境变量:
 
 - `SKIP_NPG=1` 与 `skip-npg` 作用相同
 
