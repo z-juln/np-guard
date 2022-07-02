@@ -13,7 +13,11 @@ async function main(argv) {
   if (opts['skip-npg']) {
     process.exit();
   } else if (opts['overwrite']) {
-    await promiseSpawn(opts['overwrite']);
+    try {
+      await promiseSpawn(opts['overwrite']);
+    } catch (error) {
+      console.log({error});
+    }
     process.exit(1);
   } else if (opts.version) {
     console.log(`v${version}`);
