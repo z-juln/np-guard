@@ -96,11 +96,3 @@ npm ERR!     /Users/zhuangjunlin/.npm/_logs/2022-07-01T17_18_43_293Z-debug-0.log
 ```
 
 原因: `npm publish拦截` 的实现是通过 `exit 1` 的方式, 这属于 `npm publish` 执行的报错，并不影响 `prepublishOnly` 的执行
-
-### 如何跳过npg
-
-> **强烈不推荐跳过npg, 除非是一些必要的开发环节**
-
-设置临时环境变量 `SKIP_NPG=1` 并执行 `npm publish` 即可.
-
-如macos上: `export SKIP_NPG=1 && npm publish`
